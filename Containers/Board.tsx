@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Square from "../Components/Square";
+import Style from "../styles/Board.module.css";
 
 const Board = () => {
   const [squares, setSquares] = useState(Array(9).fill(null));
@@ -23,22 +24,34 @@ const Board = () => {
     setCurrentPlayer(currentPlayer === "X" ? "O" : "X");
   };
 
+  const reSetHandler = () => {
+    setSquares(Array(9).fill(null));
+    setWinner(null);
+    setCurrentPlayer(Math.round(Math.random() * 1) === 1 ? "X" : "O");
+  };
+
   return (
     <div>
       <p> Hey {currentPlayer} , this is your turn</p>
 
-      {Array(9)
-        .fill(null)
-        .map((_, index) => {
-          return (
-            <Square
-              winner={winner}
-              key={index}
-              onClick={() => setSquaresValue(index)}
-              value={squares[index]}
-            />
-          );
-        })}
+      <div className={Style.boardShape}>
+        {Array(9)
+          .fill(null)
+          .map((_, index) => {
+            return (
+              <Square
+                winner={winner}
+                key={index}
+                onClick={() => setSquaresValue(index)}
+                value={squares[index]}
+              />
+            );
+          })}
+      </div>
+
+      <button className={Style.reset} onClick={reSetHandler}>
+        RESET
+      </button>
 
       <p>this is board</p>
     </div>

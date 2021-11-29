@@ -1,0 +1,25 @@
+.square {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  color: brown;
+  font-size: 5rem;
+}
+
+.square_o {
+    width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  color: whitesmoke;
+  font-size: 5rem;
+    background-color: blue;
+}
+
+.square_x {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    color: whitesmoke;
+    font-size: 5rem;
+      background-color: red;
+}

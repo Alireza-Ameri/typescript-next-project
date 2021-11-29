@@ -1,0 +1,16 @@
+.boardShape {
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: repeat(3, 100px);
+}
+
+.reset {
+  margin-top: 10px;
+  border-radius: 6px;
+  background-color: aqua;
+  padding: 2px;
+  font-size: 20px;
+  border: none;
+  width: 100px;
+  height: 30px;
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import Style from "../styles/Square.module.css";
 
 type player = "X" | "O" | null;
 
@@ -10,9 +11,23 @@ interface IProps {
 
 const Square: React.FC<IProps> = ({ value, onClick, winner }) => {
   if (!value) {
-    return <button onClick={onClick} disabled={Boolean(winner)} />;
+    return (
+      <button
+        className={Style.square}
+        onClick={onClick}
+        disabled={Boolean(winner)}
+      />
+    );
   }
-  return <button disabled>{value}</button>;
+  return value === "X" ? (
+    <button className={Style.square_x}  disabled>
+      {value}
+    </button>
+  ) : (
+    <button className={Style.square_o}  disabled>
+      {value}
+    </button>
+  );
 };
 
 export default Square;
