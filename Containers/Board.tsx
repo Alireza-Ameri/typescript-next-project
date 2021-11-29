@@ -70,9 +70,12 @@ const Board = () => {
 
   return (
     <div>
-      <p> Hey {currentPlayer} , this is your turn</p>
+      {!winner && <p> Hey {currentPlayer} , this is your turn</p>}
 
-      {winner && <p>Congratulations {winner} player </p>}
+      {winner && winner !== "no winner" && (
+        <p>Congratulations {winner} player </p>
+      )}
+      {winner && winner === "no winner" && <p> Sorry we have {winner}</p>}
 
       <div className={Style.boardShape}>
         {Array(9)
