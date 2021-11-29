@@ -95,8 +95,6 @@ const Board = () => {
       <button className={Style.reset} onClick={reSetHandler}>
         RESET
       </button>
-
-      <p>this is board</p>
     </div>
   );
 };

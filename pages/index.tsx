@@ -11,7 +11,6 @@ const Home: NextPage = () => {
         <meta name="description" content="generate a game" />
       </Head>
       <Board />
-       Hello word
     </div>
   )
 }
